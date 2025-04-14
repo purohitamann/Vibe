@@ -30,6 +30,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Profile"/>
+                                <connections>
+                                    <segue destination="lwT-Jm-dff" kind="presentation" modalPresentationStyle="fullScreen" id="0qG-Xa-fiO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Fiesta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1t-e3-3hu">
                                 <rect key="frame" x="111" y="310" width="211" height="21"/>
@@ -140,6 +143,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgT-R7-XZh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800.76335877862596" y="3.5211267605633805"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="agd-NT-l2D">
+            <objects>
+                <viewController id="lwT-Jm-dff" customClass="ProfileViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lhC-J8-RkI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-oe-ohr">
+                                <rect key="frame" x="81" y="160" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqw-hS-7zQ">
+                                <rect key="frame" x="81" y="394" width="231" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Edit Profile">
+                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
+                                    <color key="baseBackgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editProfileTapped:" destination="lwT-Jm-dff" eventType="touchUpInside" id="K9c-5D-j5z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMZ-9y-2aJ">
+                                <rect key="frame" x="81" y="460" width="231" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Upload Profile">
+                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
+                                    <color key="baseBackgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="uploadPictureTapped:" destination="lwT-Jm-dff" eventType="touchUpInside" id="qZD-4Z-cYh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-dB-uK4">
+                                <rect key="frame" x="148" y="534" width="96" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Y9u-Cg-fNY"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="lwT-Jm-dff" eventType="touchUpInside" id="NTD-gT-wnE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riX-Yl-L3u">
+                                <rect key="frame" x="156" y="349" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z10-Gw-mfe">
+                                <rect key="frame" x="90" y="307" width="231" height="34"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fcJ-Qa-QDk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kMZ-9y-2aJ" firstAttribute="centerX" secondItem="Vsg-dB-uK4" secondAttribute="centerX" id="3rb-IU-dXl"/>
+                            <constraint firstItem="Hqw-hS-7zQ" firstAttribute="leading" secondItem="kMZ-9y-2aJ" secondAttribute="leading" id="9qi-Ml-arD"/>
+                            <constraint firstItem="riX-Yl-L3u" firstAttribute="top" secondItem="z10-Gw-mfe" secondAttribute="bottom" constant="8" id="JJF-EQ-0Eg"/>
+                            <constraint firstItem="z10-Gw-mfe" firstAttribute="top" secondItem="1Hj-oe-ohr" secondAttribute="bottom" constant="19" id="Kkr-TV-UzH"/>
+                            <constraint firstItem="Hqw-hS-7zQ" firstAttribute="top" secondItem="riX-Yl-L3u" secondAttribute="bottom" constant="24" id="MbS-H7-qSL"/>
+                            <constraint firstItem="fcJ-Qa-QDk" firstAttribute="bottom" secondItem="Vsg-dB-uK4" secondAttribute="bottom" constant="283" id="Oaw-bj-3mo"/>
+                            <constraint firstItem="riX-Yl-L3u" firstAttribute="centerX" secondItem="lhC-J8-RkI" secondAttribute="centerX" id="R5k-De-cOy"/>
+                            <constraint firstItem="riX-Yl-L3u" firstAttribute="centerX" secondItem="Hqw-hS-7zQ" secondAttribute="centerX" id="YmV-9o-OEb"/>
+                            <constraint firstItem="riX-Yl-L3u" firstAttribute="leading" secondItem="fcJ-Qa-QDk" secondAttribute="leading" constant="156" id="atV-CJ-NgR"/>
+                            <constraint firstItem="kMZ-9y-2aJ" firstAttribute="top" secondItem="Hqw-hS-7zQ" secondAttribute="bottom" constant="23" id="dUZ-u8-5fy"/>
+                            <constraint firstItem="Vsg-dB-uK4" firstAttribute="top" secondItem="kMZ-9y-2aJ" secondAttribute="bottom" constant="31" id="ews-Hc-TWX"/>
+                            <constraint firstItem="1Hj-oe-ohr" firstAttribute="leading" secondItem="Hqw-hS-7zQ" secondAttribute="leading" id="lF7-QM-qen"/>
+                            <constraint firstItem="fcJ-Qa-QDk" firstAttribute="trailing" secondItem="1Hj-oe-ohr" secondAttribute="trailing" constant="72" id="lLu-wA-qsU"/>
+                            <constraint firstItem="z10-Gw-mfe" firstAttribute="leading" secondItem="fcJ-Qa-QDk" secondAttribute="leading" constant="90" id="m2z-ee-Gf3"/>
+                            <constraint firstItem="Vsg-dB-uK4" firstAttribute="leading" secondItem="fcJ-Qa-QDk" secondAttribute="leading" constant="148" id="oSl-ge-ehP"/>
+                            <constraint firstItem="1Hj-oe-ohr" firstAttribute="trailing" secondItem="z10-Gw-mfe" secondAttribute="trailing" id="pXD-2p-X2s"/>
+                            <constraint firstItem="1Hj-oe-ohr" firstAttribute="leading" secondItem="fcJ-Qa-QDk" secondAttribute="leading" constant="81" id="ver-Y3-Qzx"/>
+                            <constraint firstItem="1Hj-oe-ohr" firstAttribute="top" secondItem="fcJ-Qa-QDk" secondAttribute="top" constant="160" id="xNp-7T-zsW"/>
+                            <constraint firstItem="Hqw-hS-7zQ" firstAttribute="trailing" secondItem="kMZ-9y-2aJ" secondAttribute="trailing" id="xXc-Wa-KAN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="riX-Yl-L3u" id="Rlu-Iu-vzW"/>
+                        <outlet property="nameTextField" destination="z10-Gw-mfe" id="Gwk-MF-Jwc"/>
+                        <outlet property="profileImageView" destination="1Hj-oe-ohr" id="F8e-nA-zLY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1A-zN-VdC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438.9312977099237" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

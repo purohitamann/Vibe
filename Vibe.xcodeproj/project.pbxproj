@@ -18,6 +18,7 @@
 		A195F1702DAC9C7000A22E0C /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A195F16F2DAC9C7000A22E0C /* FirebaseInAppMessaging-Beta */; };
 		A195F1722DAC9C7000A22E0C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A195F1712DAC9C7000A22E0C /* FirebaseMessaging */; };
 		A195F1742DAC9C7000A22E0C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A195F1732DAC9C7000A22E0C /* FirebaseStorage */; };
+		A195F1782DACABCC00A22E0C /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A195F1772DACABCC00A22E0C /* FirebaseFirestoreCombine-Community */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 				A195F1622DAC9C7000A22E0C /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				A195F1662DAC9C7000A22E0C /* FirebaseAuth in Frameworks */,
 				A195F1742DAC9C7000A22E0C /* FirebaseStorage in Frameworks */,
+				A195F1782DACABCC00A22E0C /* FirebaseFirestoreCombine-Community in Frameworks */,
 				A195F1682DAC9C7000A22E0C /* FirebaseAuthCombine-Community in Frameworks */,
 				A195F16C2DAC9C7000A22E0C /* FirebaseFirestore in Frameworks */,
 			);
@@ -114,6 +116,7 @@
 				A195F16F2DAC9C7000A22E0C /* FirebaseInAppMessaging-Beta */,
 				A195F1712DAC9C7000A22E0C /* FirebaseMessaging */,
 				A195F1732DAC9C7000A22E0C /* FirebaseStorage */,
+				A195F1772DACABCC00A22E0C /* FirebaseFirestoreCombine-Community */,
 			);
 			productName = Vibe;
 			productReference = A1E6E86B2D94C663008A1496 /* Vibe.app */;
@@ -441,6 +444,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A195F15E2DAC9C7000A22E0C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		A195F1772DACABCC00A22E0C /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A195F15E2DAC9C7000A22E0C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

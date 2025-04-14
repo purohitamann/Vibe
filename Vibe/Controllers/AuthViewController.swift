@@ -47,7 +47,8 @@ class AuthController: UIViewController {
             if let error = error {
                 self.showAlert(title: "Login Failed", message: error.localizedDescription)
             } else {
-                self.showAlert(title: "Success", message: "Logged in as \(authResult?.user.email ?? "")")
+//                self.showAlert(title: "Success", message: "Logged in as \(authResult?.user.email ?? "")")
+                self.dismiss(animated: true, completion: nil)
                 // Navigate to dashboard or next screen
             }
         }
