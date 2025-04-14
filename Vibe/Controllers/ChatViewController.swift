@@ -10,8 +10,9 @@ import UIKit
 class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
+//        hello
         super.viewDidLoad()
-
+  
         // Do any additional setup after loading the view.
     }
     
