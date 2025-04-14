@@ -67,6 +67,26 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         // MARK: - TableView Methods
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedEvent = events[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let rsvpVC = storyboard.instantiateViewController(withIdentifier: "RSVPController") as? RSVPController {
+            rsvpVC.event = selectedEvent
+            self.navigationController?.pushViewController(rsvpVC, animated: true)
+        }
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRSVP",
+           let rsvpVC = segue.destination as? RSVPController {
+            rsvpVC.event = selectedEvent
+        } else if segue.identifier == "showUpdate",
+                  let destinationVC = segue.destination as? EventUpdateViewController {
+            destinationVC.event = selectedEvent
+        }
+    }
+
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return events.count
@@ -79,17 +99,17 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
             cell.accessoryType = .disclosureIndicator
             return cell
         }
-
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-            let selectedEvent = events[indexPath.row]
-              print("Selected event: \(selectedEvent.title)")
-            performSegue(withIdentifier: "showUpdate", sender: self)
-           
-            // TODO: Navigate to Event Detail later
-            print("Selected event: \(events[indexPath.row].title)")
-            
-        }
+//
+//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            tableView.deselectRow(at: indexPath, animated: true)
+//            let selectedEvent = events[indexPath.row]
+//              print("Selected event: \(selectedEvent.title)")
+//            performSegue(withIdentifier: "showUpdate", sender: self)
+//           
+//            // TODO: Navigate to Event Detail later
+//            print("Selected event: \(events[indexPath.row].title)")
+//            
+//        }
 
     
         // MARK: - Create Button Action
@@ -104,10 +124,10 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
       
        fetchEvents()
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showUpdate",
-           let destinationVC = segue.destination as? EventUpdateViewController {
-            destinationVC.event = selectedEvent
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showUpdate",
+//           let destinationVC = segue.destination as? EventUpdateViewController {
+//            destinationVC.event = selectedEvent
+//        }
+//    }
     }

@@ -46,9 +46,14 @@ class CreateEventViewController: UIViewController {
                 self.showAlert(message: "Failed to save event.")
             } else {
                 print("Event saved successfully!")
-                self.navigationController?.popViewController(animated: true)
+
+                // Go back to event list (pop this screen)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
+
     }
 
     func showAlert(message: String) {

@@ -509,6 +509,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="efz-nw-bTs" eventType="touchUpInside" id="2mK-MK-NP7"/>
+                                    <segue destination="1Lm-0D-MxA" kind="unwind" unwindAction="unwindToEventListWithSegue:" id="ago-1O-N6h"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-pR-4tg">
@@ -613,6 +614,7 @@
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="efz-nw-bTs" eventType="touchUpInside" id="51s-fN-8rx"/>
                                     <action selector="updateButtonTapped:" destination="9HU-HB-Ucr" eventType="touchUpInside" id="BUH-kb-264"/>
+                                    <segue destination="cRw-l6-Gz6" kind="unwind" unwindAction="unwindToEventListWithSegue:" id="gOg-Lg-JZZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoE-Tx-Alt">
@@ -626,6 +628,7 @@
                                 <connections>
                                     <action selector="deleteButtonTapped:" destination="9HU-HB-Ucr" eventType="touchUpInside" id="jwa-J6-b4a"/>
                                     <action selector="saveButtonTapped:" destination="efz-nw-bTs" eventType="touchUpInside" id="k0k-m7-Axc"/>
+                                    <segue destination="cRw-l6-Gz6" kind="unwind" unwindAction="unwindToEventListWithSegue:" id="CBW-gJ-ARJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -641,13 +644,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRB-0n-oTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cRw-l6-Gz6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2319.8473282442746" y="1322.5352112676057"/>
         </scene>
         <!--Controller-->
         <scene sceneID="gwT-xM-1bm">
             <objects>
-                <viewController id="pF6-lh-ohp" customClass="RSVPController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RSVPController" id="pF6-lh-ohp" customClass="RSVPController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0VC-R9-ABV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
