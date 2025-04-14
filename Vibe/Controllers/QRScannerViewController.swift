@@ -1,3 +1,11 @@
+//
+//  QRScannerViewController.swift
+//  Vibe
+//
+//  Created by Aman Purohit on 2025-04-13.
+//
+
+
 import UIKit
 import AVFoundation
 

@@ -41,6 +41,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NK-YW-eHF">
+                                <rect key="frame" x="163" y="558" width="67" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RSVP"/>
+                                <connections>
+                                    <segue destination="pF6-lh-ohp" kind="presentation" modalPresentationStyle="fullScreen" id="kwz-nL-Pdr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -248,6 +257,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1A-zN-VdC" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1438.9312977099237" y="3.5211267605633805"/>
+        </scene>
+        <!--Confirmation View Controller-->
+        <scene sceneID="0V5-L3-0fX">
+            <objects>
+                <viewController storyboardIdentifier="RSVPConfirmationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZAV-js-Owd" customClass="RSVPConfirmationViewController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bzi-hL-AG2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fun-YE-JO9">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmq-c4-U9i">
+                                <rect key="frame" x="47" y="113" width="310" height="268"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-v5-bxY">
+                                <rect key="frame" x="47" y="407" width="310" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xx3-RP-DfO">
+                                <rect key="frame" x="47" y="436" width="310" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LV-QO-VVY">
+                                <rect key="frame" x="99" y="481" width="195" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back To Home">
+                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
+                                    <color key="baseBackgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="cjE-9V-72Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zdl-UF-9s4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xfc-v5-bxY" firstAttribute="top" secondItem="rmq-c4-U9i" secondAttribute="bottom" constant="26" id="0Qj-jS-Xg4"/>
+                            <constraint firstItem="Fun-YE-JO9" firstAttribute="top" secondItem="bzi-hL-AG2" secondAttribute="topMargin" constant="-59" id="19f-Sh-Mwt"/>
+                            <constraint firstItem="8LV-QO-VVY" firstAttribute="leading" secondItem="zdl-UF-9s4" secondAttribute="leading" constant="99" id="37W-8g-y9d"/>
+                            <constraint firstItem="zdl-UF-9s4" firstAttribute="trailing" secondItem="rmq-c4-U9i" secondAttribute="trailing" constant="36" id="5jt-e5-Z9R"/>
+                            <constraint firstItem="rmq-c4-U9i" firstAttribute="trailing" secondItem="xfc-v5-bxY" secondAttribute="trailing" id="COX-cC-aNF"/>
+                            <constraint firstItem="zdl-UF-9s4" firstAttribute="bottom" secondItem="8LV-QO-VVY" secondAttribute="bottom" constant="294" id="H4Y-vd-zMy"/>
+                            <constraint firstItem="xfc-v5-bxY" firstAttribute="trailing" secondItem="Xx3-RP-DfO" secondAttribute="trailing" id="JcU-hI-8qh"/>
+                            <constraint firstItem="Fun-YE-JO9" firstAttribute="centerX" secondItem="8LV-QO-VVY" secondAttribute="centerX" id="L4g-zt-jgi"/>
+                            <constraint firstItem="rmq-c4-U9i" firstAttribute="leading" secondItem="xfc-v5-bxY" secondAttribute="leading" id="Osk-Yd-2Ni"/>
+                            <constraint firstItem="8LV-QO-VVY" firstAttribute="top" secondItem="Xx3-RP-DfO" secondAttribute="bottom" constant="24" id="RQ9-R6-Y9b"/>
+                            <constraint firstItem="rmq-c4-U9i" firstAttribute="leading" secondItem="zdl-UF-9s4" secondAttribute="leading" constant="47" id="XH5-iG-Roa"/>
+                            <constraint firstItem="rmq-c4-U9i" firstAttribute="top" secondItem="zdl-UF-9s4" secondAttribute="top" constant="54" id="XL9-TP-6kk"/>
+                            <constraint firstItem="Fun-YE-JO9" firstAttribute="centerY" secondItem="bzi-hL-AG2" secondAttribute="centerY" id="i6X-FK-uP2"/>
+                            <constraint firstItem="Fun-YE-JO9" firstAttribute="leading" secondItem="zdl-UF-9s4" secondAttribute="leading" id="oh0-6Q-mHe"/>
+                            <constraint firstItem="Xx3-RP-DfO" firstAttribute="top" secondItem="xfc-v5-bxY" secondAttribute="bottom" constant="8" id="qhp-Rz-JaF"/>
+                            <constraint firstItem="xfc-v5-bxY" firstAttribute="leading" secondItem="Xx3-RP-DfO" secondAttribute="leading" id="tbR-xK-4jf"/>
+                            <constraint firstItem="Fun-YE-JO9" firstAttribute="centerX" secondItem="bzi-hL-AG2" secondAttribute="centerX" id="zEp-PZ-TDa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="eventDateLabel" destination="Xx3-RP-DfO" id="QYg-O8-ad5"/>
+                        <outlet property="eventTitleLabel" destination="xfc-v5-bxY" id="IT9-1C-baD"/>
+                        <outlet property="qrCodeImageView" destination="rmq-c4-U9i" id="mz8-lG-qCa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iia-Cf-J5b" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.69465648854953" y="726.76056338028172"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="gwT-xM-1bm">
+            <objects>
+                <viewController id="pF6-lh-ohp" customClass="RSVPController" customModule="Vibe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0VC-R9-ABV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8lF-Vb-rQK">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="862"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSVP confirmation Tapped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42L-DO-8Ct">
+                                <rect key="frame" x="96" y="407" width="204" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-Ua-Xr7">
+                                <rect key="frame" x="196.66666666666666" y="446" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwG-iq-d8t">
+                                <rect key="frame" x="99" y="481" width="195" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back To Home">
+                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
+                                    <color key="baseBackgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="rsvpTapped:" destination="pF6-lh-ohp" eventType="touchUpInside" id="zuT-ga-AZj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YxP-YN-ad7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7Y9-Ua-Xr7" secondAttribute="bottom" constant="406" id="3W2-pp-73f"/>
+                            <constraint firstItem="42L-DO-8Ct" firstAttribute="leading" secondItem="YxP-YN-ad7" secondAttribute="leading" constant="96" id="BX2-SD-mom"/>
+                            <constraint firstItem="JwG-iq-d8t" firstAttribute="top" secondItem="42L-DO-8Ct" secondAttribute="bottom" constant="53" id="JEs-eg-IkM"/>
+                            <constraint firstItem="8lF-Vb-rQK" firstAttribute="centerX" secondItem="JwG-iq-d8t" secondAttribute="centerX" id="MFU-7o-Typ"/>
+                            <constraint firstItem="8lF-Vb-rQK" firstAttribute="leading" secondItem="YxP-YN-ad7" secondAttribute="leading" id="Yjd-Ad-fRe"/>
+                            <constraint firstItem="8lF-Vb-rQK" firstAttribute="top" secondItem="YxP-YN-ad7" secondAttribute="top" id="b7g-tN-Xtr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8lF-Vb-rQK" secondAttribute="bottom" constant="-10" id="bFW-8s-hRR"/>
+                            <constraint firstItem="7Y9-Ua-Xr7" firstAttribute="centerX" secondItem="0VC-R9-ABV" secondAttribute="centerX" id="rTt-sp-8zO"/>
+                            <constraint firstItem="JwG-iq-d8t" firstAttribute="leading" secondItem="YxP-YN-ad7" secondAttribute="leading" constant="99" id="tuY-5r-Kif"/>
+                            <constraint firstItem="42L-DO-8Ct" firstAttribute="top" secondItem="YxP-YN-ad7" secondAttribute="top" constant="407" id="x4b-x3-w67"/>
+                            <constraint firstItem="7Y9-Ua-Xr7" firstAttribute="centerX" secondItem="JwG-iq-d8t" secondAttribute="centerX" id="yD7-d4-dTe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRy-L4-KmZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="792"/>
         </scene>
     </scenes>
     <resources>
