@@ -15,16 +15,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>vibe-7a056.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:311068146372:ios:4cc00f5bfb79b62d486791</string>
+	<key>DATABASE_URL</key>
+	<string>https://vibe-7a056-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
