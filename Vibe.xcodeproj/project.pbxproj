@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42D6E0F52DADBA8000335EEA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D6E0F32DADBA7800335EEA /* WebKit.framework */; };
 		A195F1602DAC9C7000A22E0C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A195F15F2DAC9C7000A22E0C /* FirebaseAnalytics */; };
 		A195F1622DAC9C7000A22E0C /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A195F1612DAC9C7000A22E0C /* FirebaseAnalyticsOnDeviceConversion */; };
 		A195F1642DAC9C7000A22E0C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = A195F1632DAC9C7000A22E0C /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42D6E0F32DADBA7800335EEA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A1E6E86B2D94C663008A1496 /* Vibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 				A195F1742DAC9C7000A22E0C /* FirebaseStorage in Frameworks */,
 				A195F1782DACABCC00A22E0C /* FirebaseFirestoreCombine-Community in Frameworks */,
 				A195F1682DAC9C7000A22E0C /* FirebaseAuthCombine-Community in Frameworks */,
+				42D6E0F52DADBA8000335EEA /* WebKit.framework in Frameworks */,
 				A195F16C2DAC9C7000A22E0C /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,10 +72,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42D6E0F22DADBA7800335EEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42D6E0F32DADBA7800335EEA /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A1E6E8622D94C663008A1496 = {
 			isa = PBXGroup;
 			children = (
 				A1E6E86D2D94C663008A1496 /* Vibe */,
+				42D6E0F22DADBA7800335EEA /* Frameworks */,
 				A1E6E86C2D94C663008A1496 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,9 +199,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZCPKHA3J3;
+				DEVELOPMENT_TEAM = SW5S2728A8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vibe/Info.plist;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "This app needs access to your calendar to add events you RSVP to.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -200,7 +213,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.vibe.Vibe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vibe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -215,9 +228,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5ZCPKHA3J3;
+				DEVELOPMENT_TEAM = SW5S2728A8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vibe/Info.plist;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "This app needs access to your calendar to add events you RSVP to.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -228,7 +242,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.vibe.Vibe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vibe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
