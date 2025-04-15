@@ -2,39 +2,39 @@
 //  EventDetailsViewController.swift
 //  Vibe
 //
-//  Created by Aman Purohit on 2025-03-26.
-//
 //  Updated and added the code by Reshmi Patel
+//  This view controller displays a list of events using table view from Firestore.
+//  It allows navigation to create a new event or update an existing one.
 import UIKit
 import FirebaseFirestore
 class EventDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
+    //Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLabel: UILabel!
 
     var events: [Event] = []
     var selectedEvent: Event?
   
-
+    // func will be called after view is loded in memory
         override func viewDidLoad() {
             super.viewDidLoad()
-
+            // Set table view delegate and data source
             tableView.delegate = self
             tableView.dataSource = self
-
+            // Hide views until events are fetched
             emptyLabel.isHidden = true
             tableView.isHidden = true
            
-            fetchEvents()
+            fetchEvents()    //fetch data from firebase
 
-            updateUI()
-        }
-
+            updateUI()    //Update based on firebase updated code
+        }    
+        // func will be called before the view will appear
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             fetchEvents()
         }
-
+         // Saved under "events" collection it fetches all events from the Firestore
         func fetchEvents() {
             let db = Firestore.firestore()
             db.collection("events").getDocuments { snapshot, error in
@@ -42,23 +42,25 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
                     print("Error fetching events: \(error)")
                     return
                 }
-
+                // Convert Firestore documents to Event objects
                 self.events = snapshot?.documents.compactMap { doc in
                     return Event.fromDocument(doc)
                 } ?? []
 
-                self.updateUI()
+                self.updateUI() // after fetching it will Update UI
             }
         }
-
+        // based on the presence or absence of events it updates elements
         func updateUI() {
             if events.isEmpty {
+                // Show empty message if no events are found
                 tableView.isHidden = true
                 emptyLabel.isHidden = false
                 emptyLabel.text = "No Events Found\nTap '+' to create one."
                 emptyLabel.textAlignment = .center
                 emptyLabel.numberOfLines = 0
             } else {
+                 // Show table if events are available
                 tableView.isHidden = false
                 emptyLabel.isHidden = true
             }
@@ -66,7 +68,7 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
             tableView.reloadData()
         }
 
-        // MARK: - TableView Methods
+        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedEvent = events[indexPath.row]
@@ -99,35 +101,20 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
             cell.accessoryType = .disclosureIndicator
             return cell
         }
-//
-//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            tableView.deselectRow(at: indexPath, animated: true)
-//            let selectedEvent = events[indexPath.row]
-//              print("Selected event: \(selectedEvent.title)")
-//            performSegue(withIdentifier: "showUpdate", sender: self)
-//           
-//            // TODO: Navigate to Event Detail later
-//            print("Selected event: \(events[indexPath.row].title)")
-//            
-//        }
 
     
-        // MARK: - Create Button Action
-
+       
+ // works when "+" button is tapped to create a new event
         @IBAction func newEventTapped(_ sender: Any) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let createVC = storyboard.instantiateViewController(withIdentifier: "CreateEventViewController") as? CreateEventViewController {
                 self.navigationController?.pushViewController(createVC, animated: true)
             }
         }
+    //Prepares data before navigating to the update screen
     @IBAction func unwindToEventList(segue: UIStoryboardSegue) {
       
        fetchEvents()
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showUpdate",
-//           let destinationVC = segue.destination as? EventUpdateViewController {
-//            destinationVC.event = selectedEvent
-//        }
-//    }
+
     }
